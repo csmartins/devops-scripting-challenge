@@ -77,7 +77,7 @@ Delivery Instructions
 ======
 * You must fork this repository into your own account.
 * Once finished, you must open a PR in PayCertify's repo and send the PR url to the recruiter.
-* After you are evaluation, if you passed, the recruiter will schedule the next step in the interview process.
+* After your evaluation, if you passed, the recruiter will schedule the next step in the interview process.
 
 ## Format
 
