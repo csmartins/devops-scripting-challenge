@@ -1,6 +1,5 @@
 PayCertify Scripting Challenge
 ======
-
 We wrote a simple dummy Java app, but we decided that we don't want to use Jenkins nor CircleCI for our Continuous Integration, instead, we've decided to ask you to write a simple Continuous Integration system for us :)
 
 Your challenge is to write a script that will execute a simple pipeline (already designed) inside our Git repository:
@@ -15,6 +14,7 @@ In a glance, your script needs to:
 * Parse the `pipeline.yml`
 * Run selected pipeline
 
+
 Pipeline.yml Format
 ======
 The pipeline file has only three main hashes.
@@ -27,7 +27,6 @@ Pipelines: Group of ordered tasks
 
 Script Arguments
 ======
-
 * Pipeline name, E.g: build
 * Git repository URL
 
@@ -46,34 +45,36 @@ You can test your script on your personal computer if you have `git`, `maven`, `
 
 If you don't have it installed, we got your back, there is `Dockerfile` in this repo that you can use to run your script.
 
-
-Code Requirements
+Tasks to be completed
 ======
+* Create a Terraform module that will provision a VM or Container Orchestration Service (EKS? Fargate?)
+where the build generated will be deployed.
+* Create your CI tool from scratch, using your own code.
 
+Requirements
+======
 * Your script should execute the pipeline without errors.
 * Provide meaningful log to the user during pipeline execution.
 * Fail fast if something bad happens
 
-### Code Language
-
+### Language Choice
 Your code should be written using one of the below languages:
- 
 * Go
 * Groovy
 * Python
 * Ruby
 * PHP
 
-Keep in mind, an evaluator will check out your repository and will review:
 
+Evaluation Topics
+======
 * Code design
 * Best practices
 * Unit / Integration Tests
 * Comments / Documentation
 
 Delivery Instructions
-============
-
+======
 * You must fork this repository into your own account.
 * Once finished, you must open a PR in PayCertify's repo and send the PR url to the recruiter.
 * After you are evaluation, if you passed, the recruiter will schedule the next step in the interview process.
