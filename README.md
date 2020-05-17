@@ -1,5 +1,26 @@
 PayCertify Scripting Challenge
 ======
+
+Running this solution
+======
+
+Docker is required to run this solution, along with internet connection.
+
+In the root directory:
+```
+sudo docker build -t ci:latest .
+```
+
+Then run with docker:
+```
+sudo docker run -it ci ci.py build https://github.com/org/repo-with-pipeline.git
+```
+
+The arguments given in the example above are fictional.
+
+
+The Challenge
+======
 We wrote a simple dummy Java app, but we decided that we don't want to use Jenkins nor CircleCI for our Continuous Integration, instead, we've decided to ask you to write a simple Continuous Integration system for us :)
 
 Your challenge is to write a script that will execute a simple pipeline (already designed) inside our Git repository:
