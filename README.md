@@ -16,6 +16,11 @@ Then run with docker:
 sudo docker run -it ci ci.py build https://github.com/org/repo-with-pipeline.git
 ```
 
+You can also select a branch to checkout to, very useful when you're testing a PR branch.
+```
+sudo docker run -it ci ci.py build https://github.com/org/repo-with-pipeline.git -b feature-branch
+```
+
 The arguments given in the example above are fictional.
 
 
