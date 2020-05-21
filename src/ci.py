@@ -6,6 +6,8 @@ import logging
 import os
 import subprocess
 import yaml
+import subprocess
+
 from git import Repo
 
 def finish(result):
@@ -33,7 +35,7 @@ def checkout(repository_url, target_directory, branch=None):
     for line in os.listdir(target_directory):
         logging.info("\t{}".format(line))
 
-def execute_pipeline(pipeline, tasks):
+def execute_pipeline(pipeline, tasks, target_directory):
     pipeline_tasks = dict()
     for task in tasks:
         task_name = list(task.keys())[0]
@@ -46,6 +48,8 @@ def execute_pipeline(pipeline, tasks):
             for task in step[step_name]:
                 logging.info("Executing task {}".format(task))
                 logging.debug("{}".format(pipeline_tasks[task]))
+                os.chdir(target_directory)
+                os.system(pipeline_tasks[task]["cmd"])
             logging.info("Finished execution of step {}".format(step_name))
     except KeyError as e:
         logging.error("Task not found: {}".format(e))
@@ -82,7 +86,7 @@ if __name__ == "__main__":
                 pipeline = yaml.load(pipeline_file)
                 
                 checkout(repository_path, pipeline["branch"])
-                execute_pipeline(pipeline["pipelines"], pipeline["tasks"])
+                execute_pipeline(pipeline["pipelines"], pipeline["tasks"], repository_path)
         except FileNotFoundError:
             logging.error("Did not found a pipeline.yml file in the given repository")
             finish(False)
